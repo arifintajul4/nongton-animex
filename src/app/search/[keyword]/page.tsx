@@ -17,7 +17,9 @@ export default async function page({
   params: { keyword: string };
 }) {
   const data = await getdata(params.keyword);
-  console.log(data.data[0].result);
+  if (data.data[0].result.length === 0) {
+    return <div>Not Found</div>;
+  }
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 min-h-screen">
       {data.data[0].result.map((item: AnimeCard) => (
