@@ -35,8 +35,10 @@ export default async function Latest({ params }: { params: { slug: string } }) {
           />
         </div>
         <div className="max-h-[50vh] overflow-auto max-w-[80%]">
-          <h6 className="font-bold text-lg mb-2">{data.data[0]?.judul}</h6>
-          <pre className="bg-black text-white">
+          <h6 className="font-bold text-lg mb-2 sticky top-0 bg-white dark:bg-slate-950">
+            {data.data[0]?.judul}
+          </h6>
+          <pre className="bg-black text-white overflow-y-auto text-pretty">
             {JSON.stringify(data.data[0], null, 2)}
           </pre>
         </div>
