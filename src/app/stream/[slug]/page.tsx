@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { StreamItemType, StreamType } from '@/lib/types';
 
 export default function Stream({ params }: { params: { slug: string } }) {
   const handleGetData = async (slug: string) => {
@@ -18,7 +19,7 @@ export default function Stream({ params }: { params: { slug: string } }) {
   };
 
   const [currentUrl, setCurrentUrl] = React.useState('');
-  const [data, setData] = React.useState<any>({ data: [] });
+  const [data, setData] = React.useState<StreamType>({ data: [] });
 
   useEffect(() => {
     const getData = async () => {
@@ -45,7 +46,7 @@ export default function Stream({ params }: { params: { slug: string } }) {
           <SelectValue placeholder="Select server" />
         </SelectTrigger>
         <SelectContent>
-          {data.data[0]?.stream.map((item: any, index: number) => (
+          {data.data[0]?.stream.map((item: StreamItemType, index: number) => (
             <SelectItem value={item.link} key={index}>
               {item.link.split('/')[2]}
             </SelectItem>

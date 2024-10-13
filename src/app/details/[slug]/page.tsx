@@ -1,15 +1,6 @@
+import { Chapter } from '@/lib/types';
 import Image from 'next/image';
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 import Link from 'next/link';
-import { ScrollArea } from '@radix-ui/react-scroll-area';
 
 const handleGetData = async (slug: string) => {
   const response = await fetch(
@@ -19,6 +10,7 @@ const handleGetData = async (slug: string) => {
     const data = await response.json();
     return data;
   } catch (e) {
+    console.error(e);
     return {
       data: [],
     };
@@ -58,7 +50,7 @@ export default async function Latest({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <ul className="max-h-[40vh] overflow-auto">
-            {data.data[0].chapter.map((item: any) => (
+            {data.data[0].chapter.map((item: Chapter) => (
               <Link
                 href={`/stream/${encodeURIComponent(item.url)}`}
                 key={item.id}
