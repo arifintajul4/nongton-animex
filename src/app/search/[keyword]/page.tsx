@@ -21,24 +21,29 @@ export default async function page({
     return <div>Not Found</div>;
   }
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 min-h-screen">
-      {data.data[0].result.map((item: AnimeCard) => (
-        <Link key={item.id} href={`/details/${encodeURIComponent(item.url)}`}>
-          <Card className="overflow-hidden cursor-pointer">
-            <img
-              src={item.cover}
-              alt={item.judul}
-              className="w-full h-48 object-cover"
-            />
-            <CardContent>
-              <div className="pt-2">
-                <p className="font-bold text-lg">{item.judul}</p>
-                <p>{item.lastch}</p>
-              </div>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
+    <div>
+      <p className="mb-5">
+        Total <span className="font-bold">{data.data[0].jumlah}</span>
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 min-h-screen">
+        {data.data[0].result.map((item: AnimeCard) => (
+          <Link key={item.id} href={`/details/${encodeURIComponent(item.url)}`}>
+            <Card className="overflow-hidden cursor-pointer">
+              <img
+                src={item.cover}
+                alt={item.judul}
+                className="w-full h-48 object-cover"
+              />
+              <CardContent>
+                <div className="pt-2">
+                  <p className="font-bold text-lg">{item.judul}</p>
+                  <p>{item.lastch}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
