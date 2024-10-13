@@ -55,7 +55,7 @@ export default async function Latest({ params }: { params: { slug: string } }) {
                 href={`/stream/${encodeURIComponent(item.url)}`}
                 key={item.id}
               >
-                <div className="flex justify-between items-center pb-2 hover:bg-gray-100 px-2 py-1 rounded-md">
+                <div className="flex justify-between items-center pb-2 hover:bg-gray-100 dark:hover:bg-zinc-700 px-2 py-1 rounded-md">
                   <p>Episode {item.ch}</p>
                   <p className="text-right">{item.date}</p>
                 </div>
