@@ -167,7 +167,15 @@ export default function RootLayout({
           </main>
           <footer className="container py-5 max-w-screen-2xl fixed bottom-0 left-0 right-0 bg-white">
             <p>
-              Made with <span className="text-red-500"> &hearts;</span>
+              Made with <span className="text-red-500"> &hearts;</span>{' '}
+              <a
+                href="https://www.facebook.com/arifintajul4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline cursor-pointer"
+              >
+                Tajul Arifins S
+              </a>
             </p>
           </footer>
           <SheetContent side="left">
