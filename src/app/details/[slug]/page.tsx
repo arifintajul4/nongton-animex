@@ -25,8 +25,8 @@ export default async function Latest({ params }: { params: { slug: string } }) {
   }
   return (
     <div className="">
-      <div className="flex gap-5">
-        <div>
+      <div className="md:flex gap-5">
+        <div className="flex justify-center">
           <Image
             width={200}
             height={300}
@@ -34,7 +34,7 @@ export default async function Latest({ params }: { params: { slug: string } }) {
             alt={data.data[0].judul}
           />
         </div>
-        <div className="max-h-[50vh] overflow-auto max-w-[80%]">
+        <div className="max-h-[50vh] overflow-auto w-full md:max-w-[80%]">
           <h6 className="font-bold text-lg mb-2 sticky top-0 bg-white dark:bg-slate-950">
             {data.data[0]?.judul}
           </h6>

@@ -57,7 +57,7 @@ export default function Stream({ params }: { params: { slug: string } }) {
         <video
           controls
           key={currentUrl}
-          className="w-fit min-h-[80vh] max-h-[80vh] "
+          className="w-fit min-h-[50vh] md:min-h-[80vh] md:max-h-[80vh] "
         >
           <source src={currentUrl} type="video/mp4" />
           Your browser does not support the video tag.
