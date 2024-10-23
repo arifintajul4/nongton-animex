@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import './globals.css';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/react';
 import {
   Sheet,
   SheetClose,
@@ -132,6 +133,7 @@ export default function RootLayout({
             </header>
             <main className="container max-w-screen-2xl pt-5 pb-28">
               {children}
+              <Analytics />
             </main>
             <footer className="container py-5 max-w-screen-2xl fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-950">
               <p>
